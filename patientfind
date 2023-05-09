@@ -1,0 +1,16 @@
+#==========================================================
+# Script Name:          patientfind
+# By:                   MSR
+# Date:                 05/07/23
+# Prupose:              to find patients in patients.csv file
+# Command Line:         patientfind
+#===========================================================
+phonefile=~/source/patients.csv
+clear
+read -p "Enter the last name to search: " search_last_name
+grep -i "$search_last_name" "$phonefile"
+echo "Press ENTER to continue..."
+read continue
+~                                                                                                                                             
+~                                                                                                                                             
+~                                 
