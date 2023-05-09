@@ -1,0 +1,39 @@
+=====================================================================
+# Script Name:          Patientadd
+# By:                   MSR
+# Date:                 05/07/23
+# Purpose:              to add patients to the patient list
+# Command Line:         patientadd
+#=====================================================================
+trap "rm ~/tmp/* 2> /dev/null; exit" 0 1 2 3
+phonefile=~/source/patients.csv
+looptest=y
+while [ $looptest = y ]
+do
+  clear
+  tput cup 1 2; echo "Patient Adding"
+  tput cup 2 2; echo "=============="
+  tput cup 4 2; echo "Enter first name: "
+  tput cup 5 2; echo "Enter last name: "
+  tput cup 6 2; echo "Enter phone number: "
+  tput cup 12 2; echo "Add another? (y)es or (n)o: "
+  tput cup 4 28; read phonenum
+  if test $phonenum = "n"
+    then
+      clear; exit
+  fi
+  tput cup 5 18; read lname
+  tput cup 6 18; read fname
+  tput cup 7 18; read phonenum
+  # Check to see if the last name is not blank before you
+  # write to disk
+  if [ "$lname" > "         " ]
+  then
+echo "$phonenum:$lname:$fname:" $phonefile
+  fi
+  tput cup 12 33; read looptest
+  if [ "$looptest" = "n" ]
+  then
+    clear; exit
+  fi
+done
