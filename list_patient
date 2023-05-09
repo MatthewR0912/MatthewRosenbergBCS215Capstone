@@ -1,0 +1,13 @@
+#=================================================================
+# Script Name:          list_patient
+# By:                   MSR
+# Date:                 05/07/23
+# Purpose:              Listing the patients in patients.csv
+# Command Line:         list_patient
+#=================================================================
+clear_
+ echo "Lists of Patients"
+ echo "================="
+ sort patients.csv
+ echo "================="
+~                                        
